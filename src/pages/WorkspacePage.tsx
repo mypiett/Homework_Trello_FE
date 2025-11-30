@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { useBoardStore } from "@/shared/stores/useBoardStore";
 import { CreateBoardDialog } from "@/shared/components/CreateBoardDialog";
 import { WorkspaceFilter } from "@/features/workspace/ui/workspace-filter";
-import { WorkspaceProvider } from "@/features/workspace/ui/workspace-context";
+import { WorkspaceContextProvider } from "@/features/workspace/ui/workspace-context";
 import { WorkspaceDisplay } from "@/features/workspace/ui/workspace-display";
 
 export function WorkspacePage() {
@@ -39,7 +39,7 @@ export function WorkspacePage() {
     }
 
     return (
-        <WorkspaceProvider>
+        <WorkspaceContextProvider >
             <div className="flex-1 space-y-6 p-8 pt-6">
                 {/* Header */}
                 <div className="space-y-2">
@@ -70,6 +70,6 @@ export function WorkspacePage() {
                     workspaceId={workspaceId}
                 />
             </div>
-        </WorkspaceProvider>
+        </WorkspaceContextProvider>
     );
 }
